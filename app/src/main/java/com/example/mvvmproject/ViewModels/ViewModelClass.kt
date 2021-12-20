@@ -42,6 +42,15 @@ class ViewModelClass(val repository: Repository, val context: Context) : ViewMod
   }
 
 
+    /*
+    val userdataLive= MutableLiveData<UserDataResponse>()
+    val usermutable:LiveData<UserDataResponse>
+        get() = usermutable*/
+fun getUserDatafromDb() : LiveData<UserDataResponse>
+{
+    return repository.database.getDao().getUserdata()
+}
+
 
 
 

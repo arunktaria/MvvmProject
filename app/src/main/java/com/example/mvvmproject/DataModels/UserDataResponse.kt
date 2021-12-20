@@ -4,11 +4,18 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
+@Entity(tableName = "tbl_userdata")
 class UserDataResponse {
- var data: Data?=null
+
+    var data: Data?=null
+
+
 class Data{
-    var doctor_name:String?=null
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    var id=0
+@ColumnInfo(name = "doctor_name")
+     var doctor_name:String?=null
     var first_name:String?=null
     var code:String?=null
     var mobile:String?=null
@@ -20,11 +27,6 @@ class Data{
     var status:String?=null
     var last_name:String?=null
     var email:String?=null
-
-
-
-
-
 
 }
 

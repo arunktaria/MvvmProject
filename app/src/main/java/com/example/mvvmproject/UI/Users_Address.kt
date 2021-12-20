@@ -35,7 +35,7 @@ var TAG ="TAG"
         val appliction=(application as ApplicationMain).repository
         val viewmodel=ViewModelProvider(this, ViewModelFactoryClass(appliction,this)).get(ViewModelClass::class.java)
 
-        viewmodel.userLiveData.observe(this, Observer {
+        viewmodel.getUserDatafromDb().observe(this, Observer {
             Log.d(TAG, "in user address "+it.data?.mobile)
             binding.cellPhone.setText(it.data?.mobile.toString())
         })

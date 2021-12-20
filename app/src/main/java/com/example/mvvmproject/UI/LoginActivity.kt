@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
         ).get(ViewModelClass::class.java)
 
         viewmodel.userLiveData.observe(this, Observer {
-            Log.d(TAG, "onCreate: " + it?.data?.first_name)
+            Log.d(TAG, "onCreate: " + it?.data?.dob)
         })
 
 

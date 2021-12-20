@@ -42,6 +42,7 @@ class Repository(val retrofitApi: RetrofitApi, val database: UserDatabase) {
         val result = retrofitApi.getLoginStatus(userModel)
         if (result.body() != null) {
             userLivedata.postValue(result.body())
+           database.getDao().insertUserData(result.body()!!)
             Handler(Looper.getMainLooper()).post(Runnable {
                 Toast.makeText(
                     context,
